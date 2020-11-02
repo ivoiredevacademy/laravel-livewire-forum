@@ -1,0 +1,20 @@
+.banner {
+    height: 230px;
+    background: $mainBlue;
+
+    &__container {
+        max-width: 580px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__description {
+        text-align: center;
+        color: #fff;
+        font-size: 1.05rem;
+        line-height: 1.3rem;
+        font-weight: bold;
+    }
+}

@@ -1,4 +1,5 @@
 // Fonts
+@import "~line-awesome/dist/line-awesome/css/line-awesome.min.css";
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
@@ -6,3 +7,8 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import "./components/index";
+@import "./utilities/index";
+
+
