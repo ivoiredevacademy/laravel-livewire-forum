@@ -10998,6 +10998,14 @@ a.category__link {
   border-color: #0069ff;
 }
 
+.no-underline {
+  text-decoration: none;
+}
+
+.no-underline:hover {
+  text-decoration: none;
+}
+
 .auth__sidebar {
   background-color: #0069ff;
   color: white;

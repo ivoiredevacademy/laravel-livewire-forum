@@ -70,3 +70,11 @@ a.category__link {
     background-color: $mainBlue;
     border-color: $mainBlue;
 }
+
+.no-underline {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

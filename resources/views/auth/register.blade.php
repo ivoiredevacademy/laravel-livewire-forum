@@ -65,7 +65,7 @@
                 <div class="form-group row mb-0">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary btn-block shadow">
-                            S'inscrire
+                            Inscription
                         </button>
                     </div>
                     <div class="col-md-12 mt-2">
