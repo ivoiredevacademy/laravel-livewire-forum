@@ -10991,3 +10991,35 @@ a.category__link {
   border: none;
 }
 
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #0069ff;
+  border-color: #0069ff;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.no-underline:hover {
+  text-decoration: none;
+}
+
+.auth__sidebar {
+  background-color: #0069ff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.auth__sidebar svg {
+  height: 200px;
+}
+
+.auth__sidebar h1 {
+  font-size: 2.7rem;
+}
+
