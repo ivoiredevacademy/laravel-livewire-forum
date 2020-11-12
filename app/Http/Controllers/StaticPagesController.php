@@ -25,7 +25,7 @@ class StaticPagesController extends Controller
     public function search($slug)
     {
 
-    //test
+    //test*
         $tag_question = Tag::where('slug', $slug)->get()->first();
     
        
