@@ -11,7 +11,7 @@ class Tag extends Model
 
     public function questions()
     {
-        return $this->hasMany('App\Models\Question');
+        return $this->belongsToMany('App\Models\Question');
     }
 
     

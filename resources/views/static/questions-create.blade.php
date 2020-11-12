@@ -15,23 +15,36 @@
 
                     <div class="col-12 form-group mt-4">
                         <label for="title" class="questions__form-label">Titre de la question</label>
-                        <input type="text" class="form-control is-invalid" id="title" name="content">
-                        <div class="invalid-feedback">
-                            Message d'erreur
-                        </div>
+                        <input type="text" class="form-control  @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title') }}">
+                       
+                        
+                        @error('title')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                     </div>
 
                     <div class="col-12 form-group">
                         <label for="content" class="questions__form-label">Contenu de la question</label>
-                        <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
+                        <textarea name="content" id="content" cols="30" rows="10" class="form-control @error('content') is-invalid @enderror" >{{ old('content') }}</textarea>
+                        @error('content')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            
+                            @enderror
                     </div>
 
                     <div class="col-12 form-group">
                         <label for="content" class="questions__form-label">Technologies / Categories</label>
-                        <input type="text" class="input-tag is-invalid" name="tags" id="content">
-                        <div class="invalid-feedback">
-                            Please choose a username.
-                        </div>
+                        <input type="text" class="input-tag is-invalid" name="tags" id="content" value="{{ old('tags') }}">
+                        @error('tags')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>Veuillez choisir une catégorie svp </strong>
+                            </span>
+                            
+                            @enderror
                     </div>
 
                     <div class="col-12 form-group">
