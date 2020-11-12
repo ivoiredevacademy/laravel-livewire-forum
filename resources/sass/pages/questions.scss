@@ -1,0 +1,12 @@
+.questions {
+    &-create {
+        &__title {
+            color: $mainBlue;
+        }
+    }
+
+    &__form-label {
+        color: $darkBlue;
+        font-size: 1.1rem;
+    }
+}
