@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @livewireStyles
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,5 +22,7 @@
 </head>
 <body class="h-100">
     @yield("main-content")
+    
+   @livewireScripts
 </body>
 </html>

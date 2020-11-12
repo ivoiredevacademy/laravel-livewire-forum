@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
+    protected $fillable = [
+        'title',
+        'content',
+        'user_id',
+        'best_comment_id'
+    ];
     use HasFactory;
     public function comments()
     {
@@ -14,7 +20,7 @@ class Question extends Model
     }
     public function tags()
     {
-        return $this->hasMany('App\Models\Tag');
+        return $this->belongsToMany('App\Models\Tag');
     }
 
     public function user()
