@@ -10,4 +10,14 @@ class StaticPagesController extends Controller
     {
         return view("static.index");
     }
+
+    public function create()
+    {
+        return view("static.questions-create");
+    }
+
+    public function store()
+    {
+        dd(request()->all());
+    }
 }

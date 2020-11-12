@@ -1046,6 +1046,11 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
+"@yaireo/tagify@^3.21.4":
+  version "3.21.4"
+  resolved "https://registry.yarnpkg.com/@yaireo/tagify/-/tagify-3.21.4.tgz#3a7684672c250445138366d2d09c2b98fd44c97f"
+  integrity sha512-bDN39X5Q0PJABeErzBL0nTA26O6dHwK48cD37FqoWODqo0oymxT4GCPRBc2LYA3hg7/h/ibfKRiySWGAR1A+dQ==
+
 accepts@~1.3.4, accepts@~1.3.5, accepts@~1.3.7:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.7.tgz#531bc726517a3b2b41f850021c6cc15eaab507cd"

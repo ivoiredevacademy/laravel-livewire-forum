@@ -6,10 +6,12 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
 
         svg {
             height: 200px;
-        } 
+        }
 
         h1 {
             font-size: 2.7rem;

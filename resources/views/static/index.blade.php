@@ -43,7 +43,7 @@
                     <span>
                         20 Questions.
                     </span>
-                    <a href="#" class="btn btn-primary">Poser une question <i class="la la-arrow-right"></i></a>
+                    <a href="{{ route("static-pages.create") }}" class="btn btn-primary">Poser une question <i class="la la-arrow-right"></i></a>
                 </div>
                 <div class="card no-border p-3 my-3">
                     <div class="question ">
