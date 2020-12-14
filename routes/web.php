@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\EmailConfirmationController;
+use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\DataTestsController;
 use App\Http\Controllers\StaticPagesController;
-use App\Mail\RegistrationMail;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,6 +14,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/register/confirmation/{token}', [EmailConfirmationController::class, 'verify']);
 
 
 Route::group(["prefix" => "static"], function() {
@@ -26,10 +28,6 @@ Route::group(["prefix" => "static"], function() {
 });
 
 Route::group(['prefix' => 'test'], function() {
-    Route::get('/mails', function () {
-        $user = User::first();
-    
-        return new RegistrationMail($user);
-    });
+    Route::get('/mails', [DataTestsController::class, 'fakeMail']);
 });
 
