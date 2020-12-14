@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\StaticPagesController;
+use App\Mail\RegistrationMail;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,3 +24,12 @@ Route::group(["prefix" => "static"], function() {
     Route::post("/questions/create", [StaticPagesController::class, "store"])->name("static-pages.store");
 
 });
+
+Route::group(['prefix' => 'test'], function() {
+    Route::get('/mails', function () {
+        $user = User::first();
+    
+        return new RegistrationMail($user);
+    });
+});
+

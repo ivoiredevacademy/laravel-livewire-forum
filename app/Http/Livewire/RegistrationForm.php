@@ -2,8 +2,11 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\RegistrationMail;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class RegistrationForm extends Component
 {
@@ -38,14 +41,17 @@ class RegistrationForm extends Component
     {
         $this->validate($this->getRules());
 
-        User::create([
+        $user = User::create([
             "name" => $this->name,
             "email" => $this->email,
-            "password" => bcrypt($this->password)
+            "password" => bcrypt($this->password),
+            "confirmation_token" => Str::random(30)
         ]);
         
         $this->resetForm();
         session()->flash("success", "Vous avez reçu un email pour confimer votre compte.");
+
+        Mail::to($user->email)->send(new RegistrationMail($user));
     }
 
 
