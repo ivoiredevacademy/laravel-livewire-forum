@@ -10,3 +10,19 @@
         font-size: 1.1rem;
     }
 }
+
+.empty-question {
+    &__title {
+
+    }
+
+    div {
+        text-align: center;
+
+        svg {
+            height: 300px;
+            margin-top: -20px;
+        }
+    }
+
+}

@@ -22,7 +22,7 @@
 </head>
 <body class="h-100">
     @yield("main-content")
-    
-   @livewireScripts
+
+    @livewireScripts
 </body>
 </html>

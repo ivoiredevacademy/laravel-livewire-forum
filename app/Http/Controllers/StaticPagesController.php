@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Models\Tag;
+use Illuminate\Support\Str;
 
 class StaticPagesController extends Controller
 {
@@ -18,18 +19,14 @@ class StaticPagesController extends Controller
 
     public function create()
     {
-       
+
         return view("static.questions-create");
     }
 
     public function search($slug)
     {
-
-    //test
         $tag_question = Tag::where('slug', $slug)->get()->first();
-    
-       
-        
+
         $question_all = Question::all();
         $tags = Tag::get()->all();
         return view("static.questions-by-tag", compact('tag_question', 'question_all', 'tags') );
@@ -37,15 +34,12 @@ class StaticPagesController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
-
         $request->validate([
             'title' => 'required',
             'content' => 'required',
             'tags' => 'required'
-        
         ]);
-       
+
         $content = $request->content;
         $title = $request->title;
         $user_id = auth()->user()->id;
@@ -53,11 +47,10 @@ class StaticPagesController extends Controller
         $tags=json_decode($request->tags);
         $tags_array =[];
         foreach($tags as $tag ){
-            
-        
             if($tag->value == 'PHP'){
                 $tags_array[] =  1;
-            }if($tag->value == 'React'){
+            }
+            if($tag->value == 'React'){
                 $tags_array[] =  2;
             }
             if($tag->value == 'Javascript'){
@@ -76,19 +69,21 @@ class StaticPagesController extends Controller
                 $tags_array[] =  7;
             }
         }
-        
 
-        
         $question = Question::create([
             'title' => $title,
             'content' => $content,
             'user_id'=> $user_id,
-
+            'slug' => Str::slug($title)
         ]);
 
         $question->tags()->sync($tags_array);
 
-
         return redirect('/static')->with('success', 'Questions créée avec succès');
+    }
+
+    public function show($tagId, $questionId)
+    {
+        dd($tagId, $questionId);
     }
 }

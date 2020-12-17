@@ -48,7 +48,7 @@ class LoginController extends Controller
             'email' => ['required', 'email', 'exists:users,email', new ConfirmationTokenRule],
             'password' => ['required', 'min:8']
         ]);
-        
+
         if(! Auth::attempt(["email" => request('email'), "password" => request('password')]) ){
             throw ValidationException::withMessages([
                 'email'=> 'Vos identifiants ne correspondent pas à nos données'

@@ -11034,3 +11034,12 @@ a.category__link {
   font-size: 1.1rem;
 }
 
+.empty-question div {
+  text-align: center;
+}
+
+.empty-question div svg {
+  height: 300px;
+  margin-top: -20px;
+}
+
