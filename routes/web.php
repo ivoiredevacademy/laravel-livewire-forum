@@ -22,10 +22,10 @@ Route::group(["prefix" => "static"], function() {
 
     Route::get("/questions/create", [StaticPagesController::class, "create"])->name("static-pages.create")->middleware('auth');
 
-    Route::get("/questions/{slug}", [StaticPagesController::class, "search"])->name('tag');
     Route::post("/questions/create", [StaticPagesController::class, "store"])->name("static-pages.store");
+    Route::get("/questions/{questionSlug}", [StaticPagesController::class, "show"])->name('questions.show');
 
-    Route::get("/questions/{tagSlug}/{questionSlug}", [StaticPagesController::class, "show"])->name('questions.show');
+    Route::get("/tags/{slug}", [StaticPagesController::class, "search"])->name('tag');
 });
 
 Route::group(['prefix' => 'test'], function() {

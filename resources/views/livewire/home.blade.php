@@ -1,5 +1,5 @@
 <div>
-<x-banner>
+    <x-banner>
         <div class="d-flex justify-content-center align-items-center h-100 flex-column">
             <div class="container banner__container">
                 <h1 class="text-white font-weight-bold">Questions</h1>
@@ -28,15 +28,13 @@
         <div class="row">
             <div class="col-lg-3 col-md-12">
                 <ul class="list-group">
-
                     @foreach($tags as $tag)
-                    <li class="list-group-item d-flex justify-content-between  align-items-center category__item">
+                    <li class="list-group-item d-flex justify-content-between align-items-center category__item">
                     <!-- active -->
                         <a href="{{route('tag', $tag->slug)}}" class="category__link">{{$tag->name}}</a>
-                        <span class="badge badge-primary badge-pill">{{count($tag->questions)}}</span>
+                        <span class="badge badge-primary badge-pill">{{ count($tag->questions) }}</span>
                     </li>
                     @endforeach
-
                 </ul>
             </div>
             <div class="col-lg-9 col-md-12">
@@ -58,7 +56,7 @@
                 <div class="card no-border p-3 my-3">
                     <div class="question ">
                         <h2 class="question__title">
-                            <a href="{{ route('questions.show', $question->tag->slug, $question->slug) }}">
+                            <a href="{{ route('questions.show', $question->slug) }}" class="question__link">
                                 {{ $question->title }}
                             </a>
                         </h2>

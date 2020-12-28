@@ -1,0 +1,67 @@
+.comment {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    &__likes-count {
+        padding-right: 1.3rem ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &.liked {
+            i {
+               color: #ff0000bf;
+            }
+        }
+
+        i {
+            font-size: 1.5rem;
+            color: #999;
+
+            &:hover {
+                color: #ef2f27;
+            }
+        }
+
+        span {
+            font-size: 1.2rem;
+            color: #999;
+        }
+    }
+
+    &__author {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-name {
+            color: $darkBlue;
+            font-size: 1rem;
+            font-weight: bold;
+            padding-left: .7rem;
+        }
+    }
+
+    &__ago {
+        color: #717171;
+    }
+
+    &__text {
+        margin-top: 1rem;
+        color: black;
+    }
+
+    &.good-answer {
+        border: 3px solid #43f87b;
+        border-radius: 10px;
+    }
+}
