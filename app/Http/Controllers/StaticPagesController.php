@@ -25,7 +25,7 @@ class StaticPagesController extends Controller
     public function search($slug)
     {
 
-    //test*
+    //test
         $tag_question = Tag::where('slug', $slug)->get()->first();
     
        
@@ -74,6 +74,8 @@ class StaticPagesController extends Controller
             }
             if($tag->value == 'Laravel'){
                 $tags_array[] =  7;
+            }if($tag->value == 'Python'){
+                $tags_array[] =  8;
             }
         }
         

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\EmailConfirmationController;
+use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\DataTestsController;
 use App\Http\Controllers\StaticPagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,6 +14,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/register/confirmation/{token}', [EmailConfirmationController::class, 'verify']);
 
 
 Route::group(["prefix" => "static"], function() {
@@ -22,3 +26,8 @@ Route::group(["prefix" => "static"], function() {
     Route::post("/questions/create", [StaticPagesController::class, "store"])->name("static-pages.store");
 
 });
+
+Route::group(['prefix' => 'test'], function() {
+    Route::get('/mails', [DataTestsController::class, 'fakeMail']);
+});
+

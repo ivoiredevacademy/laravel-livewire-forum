@@ -5,16 +5,17 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Question;
 use App\Models\Tag;
-use Livewire\Withpagination;
+
+
 class Home extends Component
 {
-    use Withpagination;
+
     public $query;
     protected $paginationTheme = 'bootstrap';
 
     public function updatingQuery(){
    
-        $this->resetPage();
+        $this->reset();
     }
 
    
