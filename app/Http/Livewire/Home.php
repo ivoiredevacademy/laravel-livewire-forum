@@ -14,8 +14,7 @@ class Home extends Component
     protected $paginationTheme = 'bootstrap';
 
     public function updatingQuery(){
-
-        $this->resetPage();
+        $this->reset();
     }
 
 
