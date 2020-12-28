@@ -1,7 +1,7 @@
 @extends('layouts.skeleton')
 
 @section("main-content")
-<div id="app">
+<div id="app" class="pb-4">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">

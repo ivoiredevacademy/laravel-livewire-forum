@@ -15,14 +15,14 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield("style")
 </head>
 <body class="h-100">
     @yield("main-content")
-    
-   @livewireScripts
+
+    @livewireScripts
 </body>
 </html>

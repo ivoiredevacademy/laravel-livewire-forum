@@ -2,11 +2,66 @@
     &-create {
         &__title {
             color: $mainBlue;
+
+            a {
+                color: inherit;
+            }
         }
     }
 
     &__form-label {
         color: $darkBlue;
         font-size: 1.1rem;
+    }
+}
+
+.empty-question {
+    &__title {
+
+    }
+
+    div {
+        text-align: center;
+
+        svg {
+            height: 300px;
+            margin-top: -20px;
+        }
+    }
+
+}
+
+.question-detail {
+    &__head {
+        text-transform: uppercase;
+        color: #0069ff;
+        font-size: .85rem;
+        padding-left: 2.2rem;
+    }
+
+    &__title {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+
+        h1 {
+            color: #031b4e;
+            font-weight: bold;
+        }
+
+        a {
+            margin-right: 10px;
+        }
+
+        i {
+            font-size: 1.7rem;
+            color: #999;
+            padding-top: 7px;
+        }
+    }
+
+    &__content {
+        color: #3b455a;
+        font-size: 1.02rem;
     }
 }

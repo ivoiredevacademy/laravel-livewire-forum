@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-
-
 @section("content")
-    @livewire('home')
+    <div>Hello world</div>
 @endsection

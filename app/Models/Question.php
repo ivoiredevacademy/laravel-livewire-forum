@@ -11,7 +11,8 @@ class Question extends Model
         'title',
         'content',
         'user_id',
-        'best_comment_id'
+        'best_comment_id',
+        'slug'
     ];
     use HasFactory;
     public function comments()

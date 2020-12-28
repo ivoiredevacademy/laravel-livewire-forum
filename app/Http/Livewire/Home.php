@@ -14,22 +14,19 @@ class Home extends Component
     protected $paginationTheme = 'bootstrap';
 
     public function updatingQuery(){
-   
         $this->reset();
     }
 
-   
+
 
     public function render()
     {
-        
+        $questions = Question::where('title', 'like', '%' . $this->query . '%')
+            ->with('tags')
+            ->latest()->paginate(2);
 
-       
-        
-        $questions = Question::where('title', 'like', '%' . $this->query . '%')->latest()->paginate(2);
-        
         $question_all = Question::all();
-        $tags = Tag::get()->all();
+        $tags = Tag::with("questions")->get();
 
         return view('livewire.home', ['questions'=>$questions, 'question_all'=>$question_all, 'tags' => $tags]);
     }
