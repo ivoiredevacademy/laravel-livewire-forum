@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\EmailConfirmationController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\DataTestsController;
 use App\Http\Controllers\StaticPagesController;
+use App\Http\Livewire\Answer;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,6 +25,7 @@ Route::group(["prefix" => "static"], function() {
 
     Route::post("/questions/create", [StaticPagesController::class, "store"])->name("static-pages.store");
     Route::get("/questions/{questionSlug}", [StaticPagesController::class, "show"])->name('questions.show');
+    //Route::get('/questions/{questionSlug}', Answer::class)->name('questions.show');
 
     Route::get("/tags/{slug}", [StaticPagesController::class, "search"])->name('tag');
 });

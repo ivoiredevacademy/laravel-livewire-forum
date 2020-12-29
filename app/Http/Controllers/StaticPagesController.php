@@ -62,6 +62,11 @@ class StaticPagesController extends Controller
 
     public function show($questionSlug)
     {
-        return view('static.questions-show');
+  
+        $question = Question::where('title', $questionSlug)->get()->first();
+        if($question){
+            return view('static.questions-show', compact('question'));
+        }
+       return 'arrete moi ça';
     }
 }

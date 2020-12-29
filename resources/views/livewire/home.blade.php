@@ -56,7 +56,7 @@
                 <div class="card no-border p-3 my-3">
                     <div class="question ">
                         <h2 class="question__title">
-                            <a href="{{ route('questions.show', $question->slug) }}" class="question__link">
+                            <a href="{{ route('questions.show', $question->title) }}" class="question__link">
                                 {{ $question->title }}
                             </a>
                         </h2>
@@ -65,7 +65,7 @@
                             {{$question->content}}
                         </p>
                         <div class="d-flex justify-content-between">
-                            <span class="question__answers-count">10 reponses</span>
+                            <span class="question__answers-count">{{ count($question->comments) }} reponses</span>
                             <div>
                             @foreach($question->tags as $question_tags)
                                 <a href="#" class="question__tags">{{$question_tags->name}}</a>

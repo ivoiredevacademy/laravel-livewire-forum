@@ -12,7 +12,7 @@ class RegistrationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected User $user;
+    protected $user;
 
     /**
      * Create a new message instance.
